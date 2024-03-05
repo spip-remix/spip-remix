@@ -1,38 +1,50 @@
 {
+    "name": "spip-remix/spip",
+    "description": "SPIPRemix CMS",
+    "license": "MIT",
     "type": "project",
-    "license": "proprietary",
-    "minimum-stability": "stable",
-    "prefer-stable": true,
+    "authors": [
+        {
+            "name": "JamesRezo",
+            "email": "james@rezo.net"
+        }
+    ],
+    "keywords": [
+        "spip",
+        "cms"
+    ],
     "require": {
         "php": ">=8.1",
         "ext-ctype": "*",
         "ext-iconv": "*",
+        "spip/aide": "dev-master",
+        "spip/archiviste": "dev-master",
+        "spip/bigup": "dev-master",
+        "spip/compagnon": "dev-master",
+        "spip/composer-installer": "^0.6.1",
+        "spip/compresseur": "dev-master",
+        "spip/dist": "dev-master",
+        "spip/dump": "dev-master",
+        "spip/forum": "dev-master",
+        "spip/images": "dev-master",
+        "spip/mediabox": "dev-master",
+        "spip/medias": "dev-master",
+        "spip/mots": "dev-master",
+        "spip/plan": "dev-master",
+        "spip/porte-plume": "dev-master",
+        "spip/revisions": "dev-master",
+        "spip/safehtml": "dev-master",
+        "spip/sites": "dev-master",
+        "spip/stats": "dev-master",
+        "spip/svp": "dev-master",
+        "spip/tw": "dev-master",
+        "spip/urls": "dev-master",
         "symfony/console": "6.4.*",
         "symfony/dotenv": "6.4.*",
         "symfony/flex": "^2",
         "symfony/framework-bundle": "6.4.*",
         "symfony/runtime": "6.4.*",
         "symfony/yaml": "6.4.*"
-    },
-    "require-dev": {
-    },
-    "config": {
-        "allow-plugins": {
-            "php-http/discovery": true,
-            "symfony/flex": true,
-            "symfony/runtime": true
-        },
-        "sort-packages": true
-    },
-    "autoload": {
-        "psr-4": {
-            "App\\": "src/"
-        }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "App\\Tests\\": "tests/"
-        }
     },
     "replace": {
         "symfony/polyfill-ctype": "*",
@@ -43,25 +55,80 @@
         "symfony/polyfill-php80": "*",
         "symfony/polyfill-php81": "*"
     },
-    "scripts": {
-        "auto-scripts": {
-            "cache:clear": "symfony-cmd",
-            "assets:install %PUBLIC_DIR%": "symfony-cmd"
+    "conflict": {
+        "symfony/symfony": "*"
+    },
+    "repositories": {
+        "spip": {
+            "type": "composer",
+            "url": "https://get.spip.net/composer"
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "App\\Tests\\": "tests/"
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "php-http/discovery": true,
+            "symfony/flex": true,
+            "symfony/runtime": true,
+            "spip/composer-installer": true
         },
+        "platform": {
+            "php": "8.1.27"
+        },
+        "sort-packages": true
+    },
+    "extra": {
+        "spip": {
+            "extensions": [
+                "spip/aide",
+                "spip/archiviste",
+                "spip/bigup",
+                "spip/compagnon",
+                "spip/compresseur",
+                "spip/dump",
+                "spip/images",
+                "spip/forum",
+                "spip/mediabox",
+                "spip/medias",
+                "spip/mots",
+                "spip/plan",
+                "spip/porte-plume",
+                "spip/revisions",
+                "spip/safehtml",
+                "spip/sites",
+                "spip/stats",
+                "spip/svp",
+                "spip/tw",
+                "spip/urls"
+            ],
+            "template": "spip/dist"
+        },
+        "symfony": {
+            "allow-contrib": false,
+            "require": "6.4.*"
+        }
+    },
+    "scripts": {
         "post-install-cmd": [
             "@auto-scripts"
         ],
         "post-update-cmd": [
             "@auto-scripts"
-        ]
-    },
-    "conflict": {
-        "symfony/symfony": "*"
-    },
-    "extra": {
-        "symfony": {
-            "allow-contrib": false,
-            "require": "6.4.*"
+        ],
+        "auto-scripts": {
+            "cache:clear": "symfony-cmd",
+            "assets:install %PUBLIC_DIR%": "symfony-cmd"
         }
     }
 }
