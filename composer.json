@@ -1,5 +1,5 @@
 {
-    "name": "spip-remix/spip",
+    "name": "spip-remix/spip-remix",
     "description": "SPIPRemix CMS",
     "license": "MIT",
     "type": "project",
@@ -14,7 +14,7 @@
         "cms"
     ],
     "require": {
-        "php": ">=8.1",
+        "php": ">=8.2",
         "ext-ctype": "*",
         "ext-iconv": "*",
         "spip/aide": "dev-master",
@@ -34,17 +34,18 @@
         "spip/porte-plume": "dev-master",
         "spip/revisions": "dev-master",
         "spip/safehtml": "dev-master",
+        "spip/security": "^1.5",
         "spip/sites": "dev-master",
         "spip/stats": "dev-master",
         "spip/svp": "dev-master",
         "spip/tw": "dev-master",
         "spip/urls": "dev-master",
-        "symfony/console": "6.4.*",
-        "symfony/dotenv": "6.4.*",
+        "symfony/console": "7.0.*",
+        "symfony/dotenv": "7.0.*",
         "symfony/flex": "^2",
-        "symfony/framework-bundle": "6.4.*",
-        "symfony/runtime": "6.4.*",
-        "symfony/yaml": "6.4.*"
+        "symfony/framework-bundle": "7.0.*",
+        "symfony/runtime": "7.0.*",
+        "symfony/yaml": "7.0.*"
     },
     "replace": {
         "symfony/polyfill-ctype": "*",
@@ -84,7 +85,7 @@
             "spip/composer-installer": true
         },
         "platform": {
-            "php": "8.1.27"
+            "php": "8.2.17"
         },
         "sort-packages": true
     },
@@ -116,7 +117,7 @@
         },
         "symfony": {
             "allow-contrib": false,
-            "require": "6.4.*"
+            "require": "7.0.*"
         }
     },
     "scripts": {

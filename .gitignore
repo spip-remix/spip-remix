@@ -10,6 +10,7 @@
 ###< symfony/framework-bundle ###
 
 ###> spip/classic ###
+/config/ecran_securite.php
 /plugins-dist/
 /squelettes-dist/
 ###< spip/classic ###
